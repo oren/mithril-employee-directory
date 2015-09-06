@@ -1,0 +1,17 @@
+{
+  "name": "iteration8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-js": "browserify js/app.js -o js/bundle.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mithril-page-slider": "^0.1.2"
+  },
+  "devDependencies": {
+    "browserify": "^11.0.1"
+  }
+}

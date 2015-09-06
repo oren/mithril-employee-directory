@@ -1,3 +1,5 @@
+var pageSlider = require('mithril-page-slider');
+
 var Header = {
 	view: function(ctrl, args) {
 		return m('header.bar.bar-nav', [
@@ -178,7 +180,11 @@ m.route(document.body, '/', {
 	'/': m.component(App, {
 		service: employeeService
 	}),
-	'/employees/:Id': m.component(EmployeePage, {
-		service: employeeService
-	})
+  '/employees/:Id': m.component(pageSlider, {
+      page: EmployeePage,
+      service: employeeService
+  })
+	// '/employees/:Id': m.component(EmployeePage, {
+	// 	service: employeeService
+	// })
 })
