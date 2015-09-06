@@ -176,14 +176,21 @@ var App = {
 
 };
 
+// page wrapper
+// this function is called at route change
+function slider(page, opts) {
+  return {
+    view: function() {
+      return m.component(pageSlider, {
+        page: m.component(page, opts)
+      });
+    }
+  };
+};
+
 m.route(document.body, '/', {
-	'/': m.component(App, {
-		service: employeeService
-	}),
-  '/employees/:Id': m.component(pageSlider, {
-      page: EmployeePage,
-      service: employeeService
-  })
+	'/': m.component(App, { service: employeeService }),
+  '/employees/:Id': slider(EmployeePage, {service: employeeService})
 	// '/employees/:Id': m.component(EmployeePage, {
 	// 	service: employeeService
 	// })
